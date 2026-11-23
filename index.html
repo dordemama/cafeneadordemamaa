@@ -214,7 +214,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underlin
 <section class="events" id="evenimente"><div class="wrap eg">
  <div>
   <h2>Evenimente și mese festive</h2>
-  <p class="lead">Nu suntem o sală de nunți, dar știm să gătim pentru o masă mare. Spune-ne ce sărbătorești și câți veți fi, iar noi ne ocupăm de mâncare.</p>
+  <p class="lead">Suntem sală de nunți și evenimente speciale, pregătită pentru grupuri numeroase și momente importante. Spune-ne ce sărbătorești și câți invitați aveți, iar noi ne ocupăm de mâncare și de ospitalitate.</p>
   <ul class="ev"><li>Zile de naștere</li><li>Mese de familie</li><li>Pomeni și parastase</li><li>Prânzuri de echipă</li><li>Catering la comandă</li><li>Comenzi pregătite din timp</li></ul>
  </div>
  <div class="callbox"><h3>Sună și stabilim totul</h3><p>Spune-ne ce sărbătorești, câți veți fi și pentru ce dată. Îți răspundem direct la telefon.</p><a class="big" href="tel:+37379393443">+373 79 393 443</a><div class="qb"><a class="btn btn-p" href="tel:+37379393443">Sună acum</a><a class="btn btn-o" target="_blank" rel="noopener" href="https://wa.me/37379393443?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20organizez%20un%20eveniment%20la%20Dor%20de%20Mam%C4%83.">Scrie pe WhatsApp</a><a class="btn btn-o" target="_blank" rel="noopener" href="https://www.facebook.com/dordemamacafenea/?locale=ro_RO">Facebook</a></div></div>
@@ -237,7 +237,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underlin
   <div>
    <div class="info">
     <dl><dt>Adresă</dt><dd id="adr">str. Sarmizegetusa 26, MD-2015, or. Chișinău, Moldova</dd><dt>Telefon</dt><dd id="tel">+373 79 393 443</dd><dt>Facebook</dt><dd><a href="https://www.facebook.com/dordemamacafenea/?locale=ro_RO" target="_blank" rel="noopener">Dor de Mamă Cafenea</a></dd></dl>
-    <table class="hours" aria-label="Program"><tr><td>Luni – Vineri</td><td>08:30 – 19:00</td></tr><tr><td>Sâmbătă</td><td>10:30 – 19:00</td></tr><tr><td>Duminică</td><td>Închis</td></tr></table>
+    <table class="hours" aria-label="Program"><tr><td>Luni – Vineri</td><td>08:30 – 18:00</td></tr><tr><td>Sâmbătă – Duminică</td><td>Închis</td></tr></table>
     <div class="qb"><a class="btn btn-p" href="tel:+37379393443">Sună acum</a><button class="btn btn-o" data-copy="adr">Copiază adresa</button><button class="btn btn-o" data-copy="tel">Copiază telefonul</button><a class="btn btn-o" target="_blank" rel="noopener" href="https://wa.me/37379393443">WhatsApp</a><a class="btn btn-o" target="_blank" rel="noopener" href="https://www.facebook.com/dordemamacafenea/?locale=ro_RO">Facebook</a></div>
    </div>
    <div class="map"><div><b>Dor de Mamă</b><p style="margin:6px 0 12px">Vezi locația pe hartă și pornește direct spre noi.</p><a class="btn btn-p" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sarmizegetusa+26+MD-2015+Chisinau">Deschide în Google Maps</a></div></div>
@@ -276,7 +276,7 @@ $("#nav").addEventListener("click",e=>{if(e.target.tagName==="A"){$("#nav").clas
 /* Indicator program */
 (function(){const f=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Chisinau",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
  const g=t=>f.find(p=>p.type===t).value,d=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(g("weekday")),h=(+g("hour")%24)+(+g("minute"))/60;
- const S=x=>x===0?null:x===6?[10.5,19]:[8.5,19],fm=t=>Math.floor(t)+":"+(t%1?"30":"00"),s=S(d),on=!!s&&h>=s[0]&&h<s[1];
+ const S=x=>x===0||x===6?null:[8.5,18],fm=t=>Math.floor(t)+":"+(t%1?"30":"00"),s=S(d),on=!!s&&h>=s[0]&&h<s[1];
  $("#dot").classList.toggle("on",on);let txt;
  if(on)txt="Deschis acum · până la "+fm(s[1]);else{let k=s&&h<s[0]?0:1,x;for(;;k++){x=S((d+k)%7);if(x)break}
   txt="Închis acum · deschidem "+(k===0?"azi":k===1?"mâine":"luni")+" la "+fm(x[0])}
